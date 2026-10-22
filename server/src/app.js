@@ -14,7 +14,7 @@ const workerRoutes = require('./routes/worker.routes');
 const customerRoutes = require('./routes/customer.routes');
 const bookingRoutes = require('./routes/booking.routes');
 const paymentRoutes = require('./routes/payment.routes');
-// const aiRoutes = require('./routes/ai.routes');
+const aiRoutes = require('./routes/ai.routes');
 
 const app = express();
 
@@ -43,7 +43,7 @@ app.use('/api/v1/workers', workerRoutes);
 app.use('/api/v1/customers', customerRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
 app.use('/api/v1/payments', paymentRoutes);
-// app.use('/api/v1/ai', aiRoutes);
+app.use('/api/v1/ai', aiRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
