@@ -16,6 +16,7 @@ const bookingRoutes = require('./routes/booking.routes');
 const paymentRoutes = require('./routes/payment.routes');
 const aiRoutes = require('./routes/ai.routes');
 const reviewRoutes = require('./routes/review.routes');
+const setupSwagger = require('./config/swagger');
 
 const app = express();
 
@@ -46,6 +47,9 @@ app.use('/api/v1/bookings', bookingRoutes);
 app.use('/api/v1/payments', paymentRoutes);
 app.use('/api/v1/ai', aiRoutes);
 app.use('/api/v1/reviews', reviewRoutes);
+
+// Swagger API Documentation
+setupSwagger(app);
 
 // Health check
 app.get('/health', (req, res) => {
